@@ -46,7 +46,7 @@ public static void fill2D(int[][] vals){
   }
   printArray(vals);
 }
-public static void fill2DCopy(int[][] vals){//need to change to int and make it so each inner array can be a different
+public static int[][] fill2DCopy(int[][] vals){//need to change to int and make it so each inner array can be a different
   //length
   //prints new array with established format
   int[][] newbie= new int[vals.length][vals[0].length];
@@ -62,7 +62,7 @@ public static void fill2DCopy(int[][] vals){//need to change to int and make it 
     }
     }
   }
-  printArray(newbie);
+  return newbie;
 }
 public static void main(String[] args){
   //Defining test arrays
@@ -102,6 +102,6 @@ public static void main(String[] args){
 
   //Problem 2b
     //Test case #2
-  fill2DCopy(arrayname4);
+  System.out.println(fill2DCopy(arrayname4));
 }
 }
