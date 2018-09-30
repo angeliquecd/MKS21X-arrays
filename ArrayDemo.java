@@ -1,22 +1,22 @@
 public class ArrayDemo{
 public static void printArray(int[] ary){//prints the array between brackets and separated by commas
-  String values= "[";
+  String values= "{";
   for (int a = 0; a < ary.length-1; a++){
     values+=ary[a]+",";
     }
-    System.out.println( values+ary[ary.length-1]+"]");
+    System.out.println( values+ary[ary.length-1]+"}");
   }
 public static void printArray(int [][] ary){
   //prints the array with index followed by
   //colon and then values of the 1D array, all between brackets
-  String values="[";
+  String values="{";
   for (int a =0; a<ary.length; a++){
     values+=a+":";
     for (int i = 0; i<ary[a].length; i++){
       values+=ary[a][i]+" ";
     }
   }
-  values+="]";
+  values+="}";
   System.out.println(values);
 }
 public static int countZeros2D(int [][] nums){
@@ -49,9 +49,10 @@ public static void fill2D(int[][] vals){
 public static int[][] fill2DCopy(int[][] vals){//need to change to int and make it so each inner array can be a different
   //length
   //prints new array with established format
-  int[][] newbie= new int[vals.length][vals[0].length];
+  int[][] newbie= new int[vals.length][];
   for (int i= 0; i<vals.length;i++){
-    for (int a=0; a<vals[i].length;a++){
+    newbie[i]=new int[vals[i].length];
+    for (int a = 0;a<newbie[i].length;a++){
     //  System.out.println(vals[i][a]);
       if (vals[i][a]<0){
         newbie[i][a]=3;
